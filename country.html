@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Country</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+.container{
+    width: 400px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+img{
+    width: 150px;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Select Your Country</h2>
+
+    <select id="country" onchange="showFlag()">
+        <option value="">Choose Country</option>
+        <option value="india">India</option>
+        <option value="usa">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="canada">Canada</option>
+        <option value="australia">Australia</option>
+        <option value="japan">Japan</option>
+    </select>
+
+    <br>
+
+    <img id="flag" src="" alt="">
+</div>
+<script src="index.js"></script>
+<script>
+function showFlag() {
+    let country = document.getElementById("country").value;
+    let flag = document.getElementById("flag");
+
+    if(country === "india"){
+        flag.src = "https://flagcdn.com/w320/in.png";
+    }
+    else if(country === "usa"){
+        flag.src = "https://flagcdn.com/w320/us.png";
+    }
+    else if(country === "uk"){
+        flag.src = "https://flagcdn.com/w320/gb.png";
+    }
+    else if(country === "canada"){
+        flag.src = "https://flagcdn.com/w320/ca.png";
+    }
+    else if(country === "australia"){
+        flag.src = "https://flagcdn.com/w320/au.png";
+    }
+    else if(country === "japan"){
+        flag.src = "https://flagcdn.com/w320/jp.png";
+    }
+}
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back to Home Button</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .home-btn{
+            background-color: #febd69;
+            color: #111;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover{
+            background-color: #f3a847;
+            transform: scale(1.05);
+        }
+
+        .home-btn:active{
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="home-btn" onclick="window.location.href='index.html'">
+        Back to Home
+    </button>
+
+</body>
+</html>

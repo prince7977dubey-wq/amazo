@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Information</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+.order-box{
+    width: 450px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align: center;
+}
+
+input, textarea, select{
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    background-color: #febd69;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #f3a847;
+}
+
+#msg{
+    text-align: center;
+    color: green;
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="order-box">
+    <h2>Order Information</h2>
+
+    <form id="orderForm">
+        <input type="text" placeholder="Full Name" required>
+
+        <input type="tel" placeholder="Mobile Number" required>
+
+        <input type="email" placeholder="Email Address" required>
+
+        <textarea placeholder="Full Delivery Address" rows="4" required></textarea>
+
+        <input type="text" placeholder="City" required>
+
+        <input type="text" placeholder="State" required>
+
+        <input type="text" placeholder="PIN Code" required>
+
+        <select required>
+            <option value="">Select Payment Method</option>
+            <option>Cash on Delivery</option>
+            <option>UPI</option>
+            <option>Credit Card</option>
+            <option>Debit Card</option>
+        </select>
+
+        <button type="submit">Place Order</button>
+    </form>
+
+    <p id="msg"></p>
+
+    <button onclick="window.location.href='index.html'">
+        Back to Home
+    </button>
+</div>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("msg").innerHTML =
+    "Your order has been placed successfully!";
+});
+</script>
+
+</body>
+</html>
